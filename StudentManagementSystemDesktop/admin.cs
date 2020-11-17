@@ -945,6 +945,32 @@ namespace StudentManagementSystemDesktop
         {
             
         }
+
+        private void clas_SelectedValueChanged(object sender, EventArgs e)
+        {
+            this.fetchadminstudentdata();
+        }
+
+        private void batch_SelectedValueChanged(object sender, EventArgs e)
+        {
+            this.fetchadminstudentdata();
+        }
+        private void fetchadminstudentdata()
+        {
+            if(this.batch.Text==String.Empty||this.clas.Text==String.Empty)
+            {
+                return;
+            }
+            String tablenamee = this.clas.Text + "_" + this.batch.Text;
+            try
+            {
+                
+            }
+            catch
+            {
+
+            }
+        }
     }
 }
 // 100, 9
