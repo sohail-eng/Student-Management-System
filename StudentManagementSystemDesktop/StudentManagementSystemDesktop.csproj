@@ -181,6 +181,18 @@
   <ItemGroup>
     <None Include="Resources\rsz_clipart22002.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_clipart3349715.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_image_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clipart2714826.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_1clipart2714826.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">

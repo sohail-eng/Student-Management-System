@@ -38,8 +38,18 @@
             this.label12 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabPage_add = new System.Windows.Forms.TabPage();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridViewAdminstudent = new System.Windows.Forms.DataGridView();
+            this.adminrainpanel = new System.Windows.Forms.Panel();
+            this.windowadminst = new System.Windows.Forms.Label();
+            this.labelstadmin = new System.Windows.Forms.Label();
+            this.stpassadmin = new System.Windows.Forms.TextBox();
+            this.find = new System.Windows.Forms.Button();
+            this.ad_st_bt = new System.Windows.Forms.Button();
+            this.rm_st_bt = new System.Windows.Forms.Button();
+            this.up_st_bt = new System.Windows.Forms.Button();
             this.addclassbatchpannel = new System.Windows.Forms.Panel();
             this.emojipannel = new System.Windows.Forms.Panel();
             this.newbatchname = new System.Windows.Forms.TextBox();
@@ -48,42 +58,41 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.newclassname = new System.Windows.Forms.TextBox();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label10 = new System.Windows.Forms.Label();
-            this.A = new System.Windows.Forms.TextBox();
-            this.E = new System.Windows.Forms.TextBox();
-            this.M = new System.Windows.Forms.TextBox();
-            this.D = new System.Windows.Forms.TextBox();
-            this.CNIC = new System.Windows.Forms.TextBox();
-            this.Fname = new System.Windows.Forms.TextBox();
-            this.name = new System.Windows.Forms.TextBox();
-            this.G = new System.Windows.Forms.ComboBox();
-            this.st_add_bt = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.clas = new System.Windows.Forms.ComboBox();
-            this.batch = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.stID = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.name = new System.Windows.Forms.TextBox();
+            this.Fname = new System.Windows.Forms.TextBox();
+            this.CNIC = new System.Windows.Forms.TextBox();
+            this.D = new System.Windows.Forms.TextBox();
+            this.M = new System.Windows.Forms.TextBox();
+            this.E = new System.Windows.Forms.TextBox();
+            this.A = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.up_st_bt = new System.Windows.Forms.Button();
-            this.rm_st_bt = new System.Windows.Forms.Button();
-            this.ad_st_bt = new System.Windows.Forms.Button();
-            this.find = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.batch = new System.Windows.Forms.ComboBox();
+            this.clas = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.st_add_bt = new System.Windows.Forms.Button();
+            this.G = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.tabPage_update.SuspendLayout();
             this.tabPage_remove.SuspendLayout();
             this.tabPage_view.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tabPage_add.SuspendLayout();
+            this.tabControl1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAdminstudent)).BeginInit();
+            this.adminrainpanel.SuspendLayout();
             this.addclassbatchpannel.SuspendLayout();
             this.emojipannel.SuspendLayout();
-            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage_update
@@ -166,15 +175,40 @@
             this.tabPage_add.Text = "Add Student";
             this.tabPage_add.UseVisualStyleBackColor = true;
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+            this.tabControl1.Controls.Add(this.tabPage_add);
+            this.tabControl1.Controls.Add(this.tabPage_update);
+            this.tabControl1.Controls.Add(this.tabPage_remove);
+            this.tabControl1.Controls.Add(this.tabPage_view);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Multiline = true;
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1069, 573);
+            this.tabControl1.TabIndex = 1;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // panel1
             // 
             this.panel1.BackgroundImage = global::StudentManagementSystemDesktop.Properties.Resources.woman_typing_keyboard_laptop_account_login_screen_working_office_table_background_safety_concepts_about_internet_use_2034_1339;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.dataGridViewAdminstudent);
+            this.panel1.Controls.Add(this.adminrainpanel);
+            this.panel1.Controls.Add(this.labelstadmin);
+            this.panel1.Controls.Add(this.stpassadmin);
             this.panel1.Controls.Add(this.find);
             this.panel1.Controls.Add(this.ad_st_bt);
             this.panel1.Controls.Add(this.rm_st_bt);
             this.panel1.Controls.Add(this.up_st_bt);
-            this.panel1.Controls.Add(this.dataGridViewAdminstudent);
             this.panel1.Controls.Add(this.addclassbatchpannel);
             this.panel1.Controls.Add(this.stID);
             this.panel1.Controls.Add(this.name);
@@ -208,9 +242,112 @@
             this.dataGridViewAdminstudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewAdminstudent.Location = new System.Drawing.Point(0, 353);
             this.dataGridViewAdminstudent.Name = "dataGridViewAdminstudent";
-            this.dataGridViewAdminstudent.RowTemplate.ReadOnly = true;
             this.dataGridViewAdminstudent.Size = new System.Drawing.Size(1050, 188);
-            this.dataGridViewAdminstudent.TabIndex = 151;
+            this.dataGridViewAdminstudent.TabIndex = 160;
+            // 
+            // adminrainpanel
+            // 
+            this.adminrainpanel.BackColor = System.Drawing.Color.Transparent;
+            this.adminrainpanel.BackgroundImage = global::StudentManagementSystemDesktop.Properties.Resources.rsz_image_2;
+            this.adminrainpanel.Controls.Add(this.label5);
+            this.adminrainpanel.Controls.Add(this.windowadminst);
+            this.adminrainpanel.Location = new System.Drawing.Point(707, -150);
+            this.adminrainpanel.Name = "adminrainpanel";
+            this.adminrainpanel.Size = new System.Drawing.Size(343, 532);
+            this.adminrainpanel.TabIndex = 159;
+            // 
+            // windowadminst
+            // 
+            this.windowadminst.BackColor = System.Drawing.Color.Transparent;
+            this.windowadminst.Image = global::StudentManagementSystemDesktop.Properties.Resources.clipart2714826;
+            this.windowadminst.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.windowadminst.Location = new System.Drawing.Point(-4, 210);
+            this.windowadminst.Name = "windowadminst";
+            this.windowadminst.Size = new System.Drawing.Size(348, 271);
+            this.windowadminst.TabIndex = 0;
+            // 
+            // labelstadmin
+            // 
+            this.labelstadmin.AutoSize = true;
+            this.labelstadmin.BackColor = System.Drawing.Color.Transparent;
+            this.labelstadmin.Font = new System.Drawing.Font("Monotype Corsiva", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelstadmin.ForeColor = System.Drawing.Color.White;
+            this.labelstadmin.Location = new System.Drawing.Point(470, 6);
+            this.labelstadmin.Name = "labelstadmin";
+            this.labelstadmin.Size = new System.Drawing.Size(84, 25);
+            this.labelstadmin.TabIndex = 157;
+            this.labelstadmin.Text = "Welcome";
+            // 
+            // stpassadmin
+            // 
+            this.stpassadmin.ForeColor = System.Drawing.Color.Gray;
+            this.stpassadmin.Location = new System.Drawing.Point(434, 272);
+            this.stpassadmin.Name = "stpassadmin";
+            this.stpassadmin.Size = new System.Drawing.Size(250, 20);
+            this.stpassadmin.TabIndex = 156;
+            this.stpassadmin.Text = "Enter Password";
+            this.stpassadmin.Enter += new System.EventHandler(this.stpassadmin_Enter);
+            this.stpassadmin.Leave += new System.EventHandler(this.stpassadmin_Leave);
+            // 
+            // find
+            // 
+            this.find.BackColor = System.Drawing.Color.Transparent;
+            this.find.BackgroundImage = global::StudentManagementSystemDesktop.Properties.Resources.Screenshot_2020_11_12_112422;
+            this.find.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.find.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.find.ForeColor = System.Drawing.Color.Black;
+            this.find.Location = new System.Drawing.Point(599, 34);
+            this.find.Name = "find";
+            this.find.Size = new System.Drawing.Size(87, 30);
+            this.find.TabIndex = 155;
+            this.find.Text = "find";
+            this.find.UseVisualStyleBackColor = false;
+            this.find.Click += new System.EventHandler(this.find_Click);
+            // 
+            // ad_st_bt
+            // 
+            this.ad_st_bt.BackColor = System.Drawing.Color.Transparent;
+            this.ad_st_bt.BackgroundImage = global::StudentManagementSystemDesktop.Properties.Resources.Screenshot_2020_11_12_112422;
+            this.ad_st_bt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ad_st_bt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ad_st_bt.ForeColor = System.Drawing.Color.Black;
+            this.ad_st_bt.Location = new System.Drawing.Point(210, 64);
+            this.ad_st_bt.Name = "ad_st_bt";
+            this.ad_st_bt.Size = new System.Drawing.Size(135, 48);
+            this.ad_st_bt.TabIndex = 154;
+            this.ad_st_bt.Text = "Add";
+            this.ad_st_bt.UseVisualStyleBackColor = false;
+            this.ad_st_bt.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // rm_st_bt
+            // 
+            this.rm_st_bt.BackColor = System.Drawing.Color.Transparent;
+            this.rm_st_bt.BackgroundImage = global::StudentManagementSystemDesktop.Properties.Resources.Screenshot_2020_11_12_112422;
+            this.rm_st_bt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.rm_st_bt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rm_st_bt.ForeColor = System.Drawing.Color.Black;
+            this.rm_st_bt.Location = new System.Drawing.Point(210, 148);
+            this.rm_st_bt.Name = "rm_st_bt";
+            this.rm_st_bt.Size = new System.Drawing.Size(135, 48);
+            this.rm_st_bt.TabIndex = 153;
+            this.rm_st_bt.Text = "Remove";
+            this.rm_st_bt.UseVisualStyleBackColor = false;
+            this.rm_st_bt.Click += new System.EventHandler(this.rm_st_bt_Click);
+            // 
+            // up_st_bt
+            // 
+            this.up_st_bt.BackColor = System.Drawing.Color.Transparent;
+            this.up_st_bt.BackgroundImage = global::StudentManagementSystemDesktop.Properties.Resources.Screenshot_2020_11_12_112422;
+            this.up_st_bt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.up_st_bt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.up_st_bt.ForeColor = System.Drawing.Color.Black;
+            this.up_st_bt.Location = new System.Drawing.Point(210, 227);
+            this.up_st_bt.Name = "up_st_bt";
+            this.up_st_bt.Size = new System.Drawing.Size(135, 48);
+            this.up_st_bt.TabIndex = 152;
+            this.up_st_bt.Text = "Update";
+            this.up_st_bt.UseVisualStyleBackColor = false;
+            this.up_st_bt.Click += new System.EventHandler(this.up_st_bt_Click);
             // 
             // addclassbatchpannel
             // 
@@ -312,103 +449,32 @@
             this.newclassname.Enter += new System.EventHandler(this.newclassname_Enter);
             this.newclassname.Leave += new System.EventHandler(this.newclassname_Leave);
             // 
-            // tabControl1
+            // stID
             // 
-            this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
-            this.tabControl1.Controls.Add(this.tabPage_add);
-            this.tabControl1.Controls.Add(this.tabPage_update);
-            this.tabControl1.Controls.Add(this.tabPage_remove);
-            this.tabControl1.Controls.Add(this.tabPage_view);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Multiline = true;
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1069, 573);
-            this.tabControl1.TabIndex = 1;
+            this.stID.ForeColor = System.Drawing.Color.Gray;
+            this.stID.Location = new System.Drawing.Point(434, 40);
+            this.stID.MaxLength = 3;
+            this.stID.Name = "stID";
+            this.stID.Size = new System.Drawing.Size(121, 20);
+            this.stID.TabIndex = 100;
+            this.stID.Text = "Enter ID";
+            this.stID.TextChanged += new System.EventHandler(this.stID_TextChanged);
+            this.stID.Enter += new System.EventHandler(this.stID_Enter);
+            this.stID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.stID_KeyPress);
+            this.stID.Leave += new System.EventHandler(this.stID_Leave);
             // 
-            // timer1
+            // name
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Monotype Corsiva", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(205, 15);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(160, 25);
-            this.label10.TabIndex = 17;
-            this.label10.Text = "Manage Students";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
-            // 
-            // A
-            // 
-            this.A.ForeColor = System.Drawing.Color.Gray;
-            this.A.Location = new System.Drawing.Point(434, 236);
-            this.A.Name = "A";
-            this.A.Size = new System.Drawing.Size(250, 20);
-            this.A.TabIndex = 106;
-            this.A.Text = "Enter Your Address";
-            this.A.Enter += new System.EventHandler(this.A_Enter);
-            this.A.Leave += new System.EventHandler(this.A_Leave);
-            this.A.Validating += new System.ComponentModel.CancelEventHandler(this.A_Validating);
-            // 
-            // E
-            // 
-            this.E.ForeColor = System.Drawing.Color.Gray;
-            this.E.Location = new System.Drawing.Point(435, 202);
-            this.E.Name = "E";
-            this.E.Size = new System.Drawing.Size(250, 20);
-            this.E.TabIndex = 105;
-            this.E.Text = "Enter E-Mail";
-            this.E.Enter += new System.EventHandler(this.E_Enter);
-            this.E.Leave += new System.EventHandler(this.E_Leave);
-            this.E.Validating += new System.ComponentModel.CancelEventHandler(this.E_Validating);
-            // 
-            // M
-            // 
-            this.M.ForeColor = System.Drawing.Color.Gray;
-            this.M.Location = new System.Drawing.Point(435, 170);
-            this.M.MaxLength = 11;
-            this.M.Name = "M";
-            this.M.Size = new System.Drawing.Size(121, 20);
-            this.M.TabIndex = 104;
-            this.M.Text = "Enter Your Mobile NO";
-            this.M.Enter += new System.EventHandler(this.M_Enter);
-            this.M.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.M_KeyPress);
-            this.M.Leave += new System.EventHandler(this.M_Leave);
-            this.M.Validating += new System.ComponentModel.CancelEventHandler(this.M_Validating);
-            // 
-            // D
-            // 
-            this.D.ForeColor = System.Drawing.Color.Gray;
-            this.D.Location = new System.Drawing.Point(585, 130);
-            this.D.MaxLength = 10;
-            this.D.Name = "D";
-            this.D.Size = new System.Drawing.Size(99, 20);
-            this.D.TabIndex = 107;
-            this.D.Text = "dd/mm/yyyy";
-            this.D.Enter += new System.EventHandler(this.D_Enter);
-            this.D.Leave += new System.EventHandler(this.D_Leave);
-            this.D.Validating += new System.ComponentModel.CancelEventHandler(this.D_Validating);
-            // 
-            // CNIC
-            // 
-            this.CNIC.ForeColor = System.Drawing.Color.Gray;
-            this.CNIC.Location = new System.Drawing.Point(435, 130);
-            this.CNIC.MaxLength = 13;
-            this.CNIC.Name = "CNIC";
-            this.CNIC.Size = new System.Drawing.Size(121, 20);
-            this.CNIC.TabIndex = 103;
-            this.CNIC.Text = "Enter Your CNIC No";
-            this.CNIC.Enter += new System.EventHandler(this.CNIC_Enter);
-            this.CNIC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CNIC_KeyPress);
-            this.CNIC.Leave += new System.EventHandler(this.CNIC_Leave);
-            this.CNIC.Validating += new System.ComponentModel.CancelEventHandler(this.CNIC_Validating);
+            this.name.ForeColor = System.Drawing.Color.Gray;
+            this.name.Location = new System.Drawing.Point(434, 76);
+            this.name.MaxLength = 30;
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(250, 20);
+            this.name.TabIndex = 101;
+            this.name.Text = "Enter Your Name";
+            this.name.Enter += new System.EventHandler(this.name_Enter);
+            this.name.Leave += new System.EventHandler(this.name_Leave);
+            this.name.Validating += new System.ComponentModel.CancelEventHandler(this.name_Validating);
             // 
             // Fname
             // 
@@ -424,18 +490,199 @@
             this.Fname.Leave += new System.EventHandler(this.Fname_Leave);
             this.Fname.Validating += new System.ComponentModel.CancelEventHandler(this.Fname_Validating);
             // 
-            // name
+            // CNIC
             // 
-            this.name.ForeColor = System.Drawing.Color.Gray;
-            this.name.Location = new System.Drawing.Point(434, 76);
-            this.name.MaxLength = 30;
-            this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(250, 20);
-            this.name.TabIndex = 101;
-            this.name.Text = "Enter Your Name";
-            this.name.Enter += new System.EventHandler(this.name_Enter);
-            this.name.Leave += new System.EventHandler(this.name_Leave);
-            this.name.Validating += new System.ComponentModel.CancelEventHandler(this.name_Validating);
+            this.CNIC.ForeColor = System.Drawing.Color.Gray;
+            this.CNIC.Location = new System.Drawing.Point(435, 130);
+            this.CNIC.MaxLength = 13;
+            this.CNIC.Name = "CNIC";
+            this.CNIC.Size = new System.Drawing.Size(121, 20);
+            this.CNIC.TabIndex = 103;
+            this.CNIC.Text = "Enter Your CNIC No";
+            this.CNIC.Enter += new System.EventHandler(this.CNIC_Enter);
+            this.CNIC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CNIC_KeyPress);
+            this.CNIC.Leave += new System.EventHandler(this.CNIC_Leave);
+            this.CNIC.Validating += new System.ComponentModel.CancelEventHandler(this.CNIC_Validating);
+            // 
+            // D
+            // 
+            this.D.ForeColor = System.Drawing.Color.Gray;
+            this.D.Location = new System.Drawing.Point(585, 130);
+            this.D.MaxLength = 10;
+            this.D.Name = "D";
+            this.D.Size = new System.Drawing.Size(99, 20);
+            this.D.TabIndex = 107;
+            this.D.Text = "dd/mm/yyyy";
+            this.D.Enter += new System.EventHandler(this.D_Enter);
+            this.D.Leave += new System.EventHandler(this.D_Leave);
+            this.D.Validating += new System.ComponentModel.CancelEventHandler(this.D_Validating);
+            // 
+            // M
+            // 
+            this.M.ForeColor = System.Drawing.Color.Gray;
+            this.M.Location = new System.Drawing.Point(435, 170);
+            this.M.MaxLength = 11;
+            this.M.Name = "M";
+            this.M.Size = new System.Drawing.Size(121, 20);
+            this.M.TabIndex = 104;
+            this.M.Text = "Enter Your Mobile NO";
+            this.M.Enter += new System.EventHandler(this.M_Enter);
+            this.M.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.M_KeyPress);
+            this.M.Leave += new System.EventHandler(this.M_Leave);
+            this.M.Validating += new System.ComponentModel.CancelEventHandler(this.M_Validating);
+            // 
+            // E
+            // 
+            this.E.ForeColor = System.Drawing.Color.Gray;
+            this.E.Location = new System.Drawing.Point(435, 202);
+            this.E.Name = "E";
+            this.E.Size = new System.Drawing.Size(250, 20);
+            this.E.TabIndex = 105;
+            this.E.Text = "Enter E-Mail";
+            this.E.Enter += new System.EventHandler(this.E_Enter);
+            this.E.Leave += new System.EventHandler(this.E_Leave);
+            this.E.Validating += new System.ComponentModel.CancelEventHandler(this.E_Validating);
+            // 
+            // A
+            // 
+            this.A.ForeColor = System.Drawing.Color.Gray;
+            this.A.Location = new System.Drawing.Point(434, 236);
+            this.A.Name = "A";
+            this.A.Size = new System.Drawing.Size(250, 20);
+            this.A.TabIndex = 106;
+            this.A.Text = "Enter Your Address";
+            this.A.Enter += new System.EventHandler(this.A_Enter);
+            this.A.Leave += new System.EventHandler(this.A_Leave);
+            this.A.Validating += new System.ComponentModel.CancelEventHandler(this.A_Validating);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Monotype Corsiva", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(205, 15);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(160, 25);
+            this.label10.TabIndex = 17;
+            this.label10.Text = "Manage Students";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(596, 153);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(75, 13);
+            this.label3.TabIndex = 149;
+            this.label3.Text = "Select Gender";
+            // 
+            // button7
+            // 
+            this.button7.BackgroundImage = global::StudentManagementSystemDesktop.Properties.Resources.Screenshot_2020_11_12_112422;
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Location = new System.Drawing.Point(24, 257);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(133, 46);
+            this.button7.TabIndex = 112;
+            this.button7.Text = "Add Class/Batch";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button3
+            // 
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.Location = new System.Drawing.Point(571, 40);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(20, 20);
+            this.button3.TabIndex = 111;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(25, 148);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(133, 25);
+            this.label14.TabIndex = 109;
+            this.label14.Text = "Select Batch";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.SystemColors.Control;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(25, 59);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(132, 25);
+            this.label13.TabIndex = 108;
+            this.label13.Text = "Select Class";
+            // 
+            // batch
+            // 
+            this.batch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.batch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.batch.FormattingEnabled = true;
+            this.batch.Location = new System.Drawing.Point(24, 188);
+            this.batch.Name = "batch";
+            this.batch.Size = new System.Drawing.Size(134, 33);
+            this.batch.TabIndex = 32;
+            this.batch.SelectedValueChanged += new System.EventHandler(this.batch_SelectedValueChanged);
+            // 
+            // clas
+            // 
+            this.clas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.clas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clas.FormattingEnabled = true;
+            this.clas.Location = new System.Drawing.Point(24, 95);
+            this.clas.Name = "clas";
+            this.clas.Size = new System.Drawing.Size(133, 33);
+            this.clas.TabIndex = 31;
+            this.clas.SelectedValueChanged += new System.EventHandler(this.clas_SelectedValueChanged);
+            this.clas.TextChanged += new System.EventHandler(this.clas_TextChanged);
+            // 
+            // button2
+            // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(562, 170);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(20, 20);
+            this.button2.TabIndex = 30;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(562, 130);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(20, 20);
+            this.button1.TabIndex = 29;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // st_add_bt
+            // 
+            this.st_add_bt.BackColor = System.Drawing.Color.Transparent;
+            this.st_add_bt.BackgroundImage = global::StudentManagementSystemDesktop.Properties.Resources.Screenshot_2020_11_12_112422;
+            this.st_add_bt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.st_add_bt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.st_add_bt.ForeColor = System.Drawing.Color.Black;
+            this.st_add_bt.Location = new System.Drawing.Point(475, 299);
+            this.st_add_bt.Name = "st_add_bt";
+            this.st_add_bt.Size = new System.Drawing.Size(162, 48);
+            this.st_add_bt.TabIndex = 26;
+            this.st_add_bt.Text = "Done";
+            this.st_add_bt.UseVisualStyleBackColor = false;
+            this.st_add_bt.Click += new System.EventHandler(this.st_add_bt_Click);
             // 
             // G
             // 
@@ -455,195 +702,34 @@
             this.G.Leave += new System.EventHandler(this.G_Leave);
             this.G.Validating += new System.ComponentModel.CancelEventHandler(this.G_Validating);
             // 
-            // st_add_bt
+            // label5
             // 
-            this.st_add_bt.BackColor = System.Drawing.Color.Transparent;
-            this.st_add_bt.BackgroundImage = global::StudentManagementSystemDesktop.Properties.Resources.Screenshot_2020_11_12_112422;
-            this.st_add_bt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.st_add_bt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.st_add_bt.ForeColor = System.Drawing.Color.Black;
-            this.st_add_bt.Location = new System.Drawing.Point(509, 262);
-            this.st_add_bt.Name = "st_add_bt";
-            this.st_add_bt.Size = new System.Drawing.Size(110, 48);
-            this.st_add_bt.TabIndex = 26;
-            this.st_add_bt.Text = "Done";
-            this.st_add_bt.UseVisualStyleBackColor = false;
-            this.st_add_bt.Click += new System.EventHandler(this.st_add_bt_Click);
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Location = new System.Drawing.Point(-14, 150);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(17, 26);
+            this.label5.TabIndex = 161;
             // 
-            // button1
+            // label6
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(562, 130);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(20, 20);
-            this.button1.TabIndex = 29;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Location = new System.Drawing.Point(693, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(358, 62);
+            this.label6.TabIndex = 161;
             // 
-            // button2
+            // label7
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(562, 170);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(20, 20);
-            this.button2.TabIndex = 30;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Location = new System.Drawing.Point(671, 330);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(391, 23);
+            this.label7.TabIndex = 162;
             // 
-            // clas
+            // timer2
             // 
-            this.clas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.clas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clas.FormattingEnabled = true;
-            this.clas.Location = new System.Drawing.Point(24, 95);
-            this.clas.Name = "clas";
-            this.clas.Size = new System.Drawing.Size(133, 33);
-            this.clas.TabIndex = 31;
-            this.clas.SelectedValueChanged += new System.EventHandler(this.clas_SelectedValueChanged);
-            this.clas.TextChanged += new System.EventHandler(this.clas_TextChanged);
-            // 
-            // batch
-            // 
-            this.batch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.batch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.batch.FormattingEnabled = true;
-            this.batch.Location = new System.Drawing.Point(24, 188);
-            this.batch.Name = "batch";
-            this.batch.Size = new System.Drawing.Size(134, 33);
-            this.batch.TabIndex = 32;
-            this.batch.SelectedValueChanged += new System.EventHandler(this.batch_SelectedValueChanged);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.SystemColors.Control;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(25, 59);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(132, 25);
-            this.label13.TabIndex = 108;
-            this.label13.Text = "Select Class";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(25, 148);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(133, 25);
-            this.label14.TabIndex = 109;
-            this.label14.Text = "Select Batch";
-            // 
-            // stID
-            // 
-            this.stID.ForeColor = System.Drawing.Color.Gray;
-            this.stID.Location = new System.Drawing.Point(434, 40);
-            this.stID.MaxLength = 3;
-            this.stID.Name = "stID";
-            this.stID.Size = new System.Drawing.Size(121, 20);
-            this.stID.TabIndex = 100;
-            this.stID.Text = "Enter ID";
-            this.stID.TextChanged += new System.EventHandler(this.stID_TextChanged);
-            this.stID.Enter += new System.EventHandler(this.stID_Enter);
-            this.stID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.stID_KeyPress);
-            this.stID.Leave += new System.EventHandler(this.stID_Leave);
-            // 
-            // button3
-            // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(571, 40);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(20, 20);
-            this.button3.TabIndex = 111;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button7
-            // 
-            this.button7.BackgroundImage = global::StudentManagementSystemDesktop.Properties.Resources.Screenshot_2020_11_12_112422;
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(24, 257);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(133, 46);
-            this.button7.TabIndex = 112;
-            this.button7.Text = "Add Class/Batch";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(596, 153);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 13);
-            this.label3.TabIndex = 149;
-            this.label3.Text = "Select Gender";
-            // 
-            // up_st_bt
-            // 
-            this.up_st_bt.BackColor = System.Drawing.Color.Transparent;
-            this.up_st_bt.BackgroundImage = global::StudentManagementSystemDesktop.Properties.Resources.Screenshot_2020_11_12_112422;
-            this.up_st_bt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.up_st_bt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.up_st_bt.ForeColor = System.Drawing.Color.Black;
-            this.up_st_bt.Location = new System.Drawing.Point(210, 227);
-            this.up_st_bt.Name = "up_st_bt";
-            this.up_st_bt.Size = new System.Drawing.Size(135, 48);
-            this.up_st_bt.TabIndex = 152;
-            this.up_st_bt.Text = "Update";
-            this.up_st_bt.UseVisualStyleBackColor = false;
-            this.up_st_bt.Click += new System.EventHandler(this.up_st_bt_Click);
-            // 
-            // rm_st_bt
-            // 
-            this.rm_st_bt.BackColor = System.Drawing.Color.Transparent;
-            this.rm_st_bt.BackgroundImage = global::StudentManagementSystemDesktop.Properties.Resources.Screenshot_2020_11_12_112422;
-            this.rm_st_bt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.rm_st_bt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rm_st_bt.ForeColor = System.Drawing.Color.Black;
-            this.rm_st_bt.Location = new System.Drawing.Point(210, 148);
-            this.rm_st_bt.Name = "rm_st_bt";
-            this.rm_st_bt.Size = new System.Drawing.Size(135, 48);
-            this.rm_st_bt.TabIndex = 153;
-            this.rm_st_bt.Text = "Remove";
-            this.rm_st_bt.UseVisualStyleBackColor = false;
-            this.rm_st_bt.Click += new System.EventHandler(this.rm_st_bt_Click);
-            // 
-            // ad_st_bt
-            // 
-            this.ad_st_bt.BackColor = System.Drawing.Color.Transparent;
-            this.ad_st_bt.BackgroundImage = global::StudentManagementSystemDesktop.Properties.Resources.Screenshot_2020_11_12_112422;
-            this.ad_st_bt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ad_st_bt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ad_st_bt.ForeColor = System.Drawing.Color.Black;
-            this.ad_st_bt.Location = new System.Drawing.Point(210, 64);
-            this.ad_st_bt.Name = "ad_st_bt";
-            this.ad_st_bt.Size = new System.Drawing.Size(135, 48);
-            this.ad_st_bt.TabIndex = 154;
-            this.ad_st_bt.Text = "Add";
-            this.ad_st_bt.UseVisualStyleBackColor = false;
-            this.ad_st_bt.Click += new System.EventHandler(this.button10_Click);
-            // 
-            // find
-            // 
-            this.find.BackColor = System.Drawing.Color.Transparent;
-            this.find.BackgroundImage = global::StudentManagementSystemDesktop.Properties.Resources.Screenshot_2020_11_12_112422;
-            this.find.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.find.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.find.ForeColor = System.Drawing.Color.Black;
-            this.find.Location = new System.Drawing.Point(599, 34);
-            this.find.Name = "find";
-            this.find.Size = new System.Drawing.Size(87, 30);
-            this.find.TabIndex = 155;
-            this.find.Text = "find";
-            this.find.UseVisualStyleBackColor = false;
-            this.find.Click += new System.EventHandler(this.find_Click);
+            this.timer2.Enabled = true;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // admin
             // 
@@ -662,13 +748,14 @@
             this.tabPage_view.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.tabPage_add.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAdminstudent)).EndInit();
+            this.adminrainpanel.ResumeLayout(false);
             this.addclassbatchpannel.ResumeLayout(false);
             this.emojipannel.ResumeLayout(false);
             this.emojipannel.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -694,7 +781,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel emojipannel;
-        private System.Windows.Forms.DataGridView dataGridViewAdminstudent;
         private System.Windows.Forms.TextBox stID;
         private System.Windows.Forms.TextBox name;
         private System.Windows.Forms.TextBox Fname;
@@ -719,5 +805,14 @@
         private System.Windows.Forms.Button rm_st_bt;
         private System.Windows.Forms.Button up_st_bt;
         private System.Windows.Forms.Button find;
+        private System.Windows.Forms.TextBox stpassadmin;
+        private System.Windows.Forms.Label labelstadmin;
+        private System.Windows.Forms.Panel adminrainpanel;
+        private System.Windows.Forms.DataGridView dataGridViewAdminstudent;
+        private System.Windows.Forms.Label windowadminst;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Timer timer2;
     }
 }

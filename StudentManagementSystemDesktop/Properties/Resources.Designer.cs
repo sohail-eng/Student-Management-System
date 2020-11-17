@@ -73,6 +73,16 @@ namespace StudentManagementSystemDesktop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap clipart2714826 {
+            get {
+                object obj = ResourceManager.GetObject("clipart2714826", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap download1 {
             get {
                 object obj = ResourceManager.GetObject("download1", resourceCulture);
@@ -87,6 +97,16 @@ namespace StudentManagementSystemDesktop.Properties {
             get {
                 object obj = ResourceManager.GetObject("laptop-with-paper-line-screen-background-student-tools-illustration-back-school-o" +
                         "nline-class-distant-education-concept_7102-531", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rsz_1clipart2714826 {
+            get {
+                object obj = ResourceManager.GetObject("rsz_1clipart2714826", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -134,6 +154,16 @@ namespace StudentManagementSystemDesktop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap rsz_clipart3349715 {
+            get {
+                object obj = ResourceManager.GetObject("rsz_clipart3349715", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap rsz_clipart40356 {
             get {
                 object obj = ResourceManager.GetObject("rsz_clipart40356", resourceCulture);
@@ -147,6 +177,16 @@ namespace StudentManagementSystemDesktop.Properties {
         internal static System.Drawing.Bitmap rsz_clipart697191 {
             get {
                 object obj = ResourceManager.GetObject("rsz_clipart697191", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rsz_image_2 {
+            get {
+                object obj = ResourceManager.GetObject("rsz_image_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

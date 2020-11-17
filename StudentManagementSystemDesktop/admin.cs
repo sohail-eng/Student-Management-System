@@ -430,6 +430,10 @@ namespace StudentManagementSystemDesktop
 
         private void D_Validating(object sender, CancelEventArgs e)
         {
+            this.checkDate();
+        }
+        private void checkDate()
+        {
             errorProvider1.Clear();
             erroris = false;
             if (!(this.D.Text.Equals("dd/mm/yyyy")))
@@ -484,115 +488,121 @@ namespace StudentManagementSystemDesktop
                 errorProvider1.SetError(D, "Please Enter Date Of Birth");
                 erroris = true;
             }
-
         }
         private Boolean datecheck(String date)
         {
 
-            String month = "";
-            String dat = "";
-            String year = "";
-            dat = date[0] + "" + date[1] + "";
-            month = date[3] + "" + date[4] + "";
-            year = date[6] + "" + date[7] + "" + date[8] + "" + date[9] + "";
-            if (Convert.ToInt32(year) > 2020 || Convert.ToInt32(year) < 1947)
+            try
             {
-                return false;
-            }
-            if (Convert.ToInt32(dat) <= 0)
-            {
-                return false;
-            }
-            if (month.Equals("01"))
-            {
-                if (Convert.ToInt32(dat) > 31)
+                String month = "";
+                String dat = "";
+                String year = "";
+                dat = date[0] + "" + date[1] + "";
+                month = date[3] + "" + date[4] + "";
+                year = date[6] + "" + date[7] + "" + date[8] + "" + date[9] + "";
+                if (Convert.ToInt32(year) > 2020 || Convert.ToInt32(year) < 1947)
                 {
                     return false;
                 }
-            }
-            else if (month.Equals("02"))
-            {
-                if (Convert.ToInt32(dat) > 29)
+                if (Convert.ToInt32(dat) <= 0)
                 {
                     return false;
                 }
-            }
-            else if (month.Equals("03"))
-            {
-                if (Convert.ToInt32(dat) > 31)
+                if (month.Equals("01"))
+                {
+                    if (Convert.ToInt32(dat) > 31)
+                    {
+                        return false;
+                    }
+                }
+                else if (month.Equals("02"))
+                {
+                    if (Convert.ToInt32(dat) > 29)
+                    {
+                        return false;
+                    }
+                }
+                else if (month.Equals("03"))
+                {
+                    if (Convert.ToInt32(dat) > 31)
+                    {
+                        return false;
+                    }
+                }
+                else if (month.Equals("04"))
+                {
+                    if (Convert.ToInt32(dat) > 30)
+                    {
+                        return false;
+                    }
+                }
+                else if (month.Equals("05"))
+                {
+                    if (Convert.ToInt32(dat) > 31)
+                    {
+                        return false;
+                    }
+                }
+                else if (month.Equals("06"))
+                {
+                    if (Convert.ToInt32(dat) > 30)
+                    {
+                        return false;
+                    }
+                }
+                else if (month.Equals("07"))
+                {
+                    if (Convert.ToInt32(dat) > 31)
+                    {
+                        return false;
+                    }
+                }
+                else if (month.Equals("08"))
+                {
+                    if (Convert.ToInt32(dat) > 31)
+                    {
+                        return false;
+                    }
+                }
+                else if (month.Equals("09"))
+                {
+                    if (Convert.ToInt32(dat) > 30)
+                    {
+                        return false;
+                    }
+                }
+                else if (month.Equals("10"))
+                {
+                    if (Convert.ToInt32(dat) > 31)
+                    {
+                        return false;
+                    }
+                }
+                else if (month.Equals("11"))
+                {
+                    if (Convert.ToInt32(dat) > 30)
+                    {
+                        return false;
+                    }
+                }
+                else if (month.Equals("12"))
+                {
+                    if (Convert.ToInt32(dat) > 31)
+                    {
+                        return false;
+                    }
+                }
+                else
                 {
                     return false;
                 }
-            }
-            else if (month.Equals("04"))
-            {
-                if (Convert.ToInt32(dat) > 30)
-                {
-                    return false;
-                }
-            }
-            else if (month.Equals("05"))
-            {
-                if (Convert.ToInt32(dat) > 31)
-                {
-                    return false;
-                }
-            }
-            else if (month.Equals("06"))
-            {
-                if (Convert.ToInt32(dat) > 30)
-                {
-                    return false;
-                }
-            }
-            else if (month.Equals("07"))
-            {
-                if (Convert.ToInt32(dat) > 31)
-                {
-                    return false;
-                }
-            }
-            else if (month.Equals("08"))
-            {
-                if (Convert.ToInt32(dat) > 31)
-                {
-                    return false;
-                }
-            }
-            else if (month.Equals("09"))
-            {
-                if (Convert.ToInt32(dat) > 30)
-                {
-                    return false;
-                }
-            }
-            else if (month.Equals("10"))
-            {
-                if (Convert.ToInt32(dat) > 31)
-                {
-                    return false;
-                }
-            }
-            else if (month.Equals("11"))
-            {
-                if (Convert.ToInt32(dat) > 30)
-                {
-                    return false;
-                }
-            }
-            else if (month.Equals("12"))
-            {
-                if (Convert.ToInt32(dat) > 31)
-                {
-                    return false;
-                }
-            }
-            else
-            {
-                return false;
-            }
 
-            return true;
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         private void CNIC_Validating(object sender, CancelEventArgs e)
@@ -760,7 +770,12 @@ namespace StudentManagementSystemDesktop
                     con.Close();
                 }
                 con.Close();
-                if (erroris == true || this.clas.Text == String.Empty || this.batch.Text == String.Empty)
+                if (erroris == true || this.clas.Text == String.Empty || this.batch.Text == String.Empty
+                    ||
+                    G.Text==String.Empty
+                    ||
+                    D.Text.Equals("dd/mm/yyyy")
+                    )
                 {
                     MessageBox.Show("Please Enter Correct Data");
                 }
@@ -788,11 +803,11 @@ namespace StudentManagementSystemDesktop
             }
             else if(fun.Equals("update"))
             {
-                MessageBox.Show("Update");
+                this.updateData();
             }
             else if(fun.Equals("remove"))
             {
-                MessageBox.Show("Remove");
+                this.removeData();
             }
             else
             {
@@ -800,6 +815,52 @@ namespace StudentManagementSystemDesktop
             }
             this.fetchadminstudentdata();
         }
+        private void updateData()
+        {
+            if (!(this.name.Equals("Enter Your Name")
+                ||
+                this.Fname.Text.Equals("Enter Your Father Name")
+                ||
+                this.CNIC.Text.Equals("Enter Your CNIC No")
+                ||
+                this.D.Text.Equals("dd/mm/yyyy")
+                ||
+                (!(this.datecheck(this.D.Text)))
+                ||
+                this.M.Text.Equals("Enter Your Mobile NO")
+                ||
+                (!(this.G.Text.Equals("Male") || this.G.Text.Equals("Female") || this.G.Text.Equals("Other")))
+                ||
+                this.E.Text.Equals("Enter E-Mail")
+                ||
+                this.A.Text.Equals("Enter Your Address")
+                ||
+                this.stpassadmin.Text.Equals("Enter Password")
+                ))
+            {
+                try
+                {
+                    query = "update "+this.clas.Text+"_"+this.batch.Text+" set namee='"+this.name.Text+"',fname='"+this.Fname.Text+"',cnic='"+this.CNIC.Text+"',mobile='"+this.M.Text+"',email='"+this.E.Text+"',addres='"+this.A.Text+"',DOB='"+this.D.Text+"',gender='"+this.G.Text+"',pass='"+this.stpassadmin.Text+"' where id='"+this.stID.Text+"'";
+                    cmd = new SqlCommand(query, con);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("Data Updated Successfully");
+                    this.fetchadminstudentdata();
+                }
+                catch(Exception e)
+                {
+                    con.Close();
+                    MessageBox.Show(""+e);
+                }
+                con.Close();
+            }
+            else
+            {
+                MessageBox.Show("Please Enter Correct Data");
+            }
+        }
+
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -829,6 +890,9 @@ namespace StudentManagementSystemDesktop
             this.rm_st_bt.Visible = true;
             this.up_st_bt.Visible = true;
         }
+
+        //707, -150
+
         private Boolean tim = true;
         private int i = 0;
         private void timer1_Tick(object sender, EventArgs e)
@@ -837,6 +901,7 @@ namespace StudentManagementSystemDesktop
             if(tim)
             {
                 this.label2.Location = new Point(100, 9+i);
+                
                 if(i>60)
                 {
                     tim = false;
@@ -1077,6 +1142,7 @@ namespace StudentManagementSystemDesktop
             this.hidefun(this.A);
             this.A.Text = "Enter Your Address";
             this.hidefun(this.st_add_bt);
+            this.hidefun(this.stpassadmin);
         }
         private void hidefun(Button b)
         {
@@ -1146,9 +1212,12 @@ namespace StudentManagementSystemDesktop
         }
         private void button10_Click(object sender, EventArgs e)
         {
+            this.labelstadmin.Text = "Add Student";
             this.hideonstart();
             this.showAdd();
+            this.showGray();
             this.fun = "add";
+            this.st_add_bt.Text = "Insert";
         }
         private void showupdateRemove()
         {
@@ -1173,16 +1242,21 @@ namespace StudentManagementSystemDesktop
 
         private void rm_st_bt_Click(object sender, EventArgs e)
         {
+            this.labelstadmin.Text = "Remove Student";
             this.hideonstart();
             this.showupdateRemove();
             this.fun = "remove";
+            this.st_add_bt.Text = "remove";
         }
 
         private void up_st_bt_Click(object sender, EventArgs e)
         {
+            this.labelstadmin.Text="Update Student";
             this.hideonstart();
             this.showupdateRemove();
+            this.stpassadmin.Visible = true;
             this.fun = "update";
+            this.st_add_bt.Text = "update";
         }
 
         private void find_Click(object sender, EventArgs e)
@@ -1203,7 +1277,7 @@ namespace StudentManagementSystemDesktop
                 }
                 con.Close();
                 Boolean b = false;
-                for(int i=0;i<list.Count;i++)
+                for(int i=0;i<lists.Count;i++)
                 {
                     if(this.stID.Text.Equals(lists[i]))
                     {
@@ -1212,11 +1286,20 @@ namespace StudentManagementSystemDesktop
                 }
                 if(b)
                 {
+                    if(this.fun.Equals("update"))
+                    {
+                        this.showAdd();
+                        this.stpassadmin.Enabled = true;
+                        this.showblack();
+                    }
+                    this.stID.Enabled = false;
+                    this.button3.Enabled = false;
+                    this.find.Enabled = false;
                     showData();
                 }
                 else
                 {
-                    MessageBox.Show("Data Not Found");
+                    MessageBox.Show("Data Not Found ");
                 }
             }
             catch
@@ -1225,22 +1308,55 @@ namespace StudentManagementSystemDesktop
                 MessageBox.Show("Data Not Found");
             }
         }
+        private void showblack()
+        {
+            this.name.ForeColor = Color.Black;
+            this.Fname.ForeColor = Color.Black;
+            this.CNIC.ForeColor = Color.Black;
+            this.D.ForeColor = Color.Black;
+            this.M.ForeColor = Color.Black;
+            this.G.ForeColor = Color.Black;
+            this.E.ForeColor = Color.Black;
+            this.A.ForeColor = Color.Black;
+        }
+        private void showGray()
+        {
+            this.name.ForeColor = Color.Gray;
+            this.Fname.ForeColor = Color.Gray;
+            this.CNIC.ForeColor = Color.Gray;
+            this.D.ForeColor = Color.Gray;
+            this.M.ForeColor = Color.Gray;
+            this.G.ForeColor = Color.Gray;
+            this.E.ForeColor = Color.Gray;
+            this.A.ForeColor = Color.Gray;
+        }
         private void showData()
         {
             try
             {
-                query = "select id,namee,fname,cnic,mobile,email,addres,DOB,gender,pass from "+this.clas.Text+"_"+this.batch.Text;
+                query = "select namee,fname,cnic,mobile,email,addres,DOB,gender,pass from "+this.clas.Text+"_"+this.batch.Text+" where id='"+this.stID.Text+"'";
                 cmd = new SqlCommand(query, con);
+                con.Open();
                 using(SqlDataReader reader=cmd.ExecuteReader())
                 {
                     while(reader.Read())
                     {
                         for(int i=0;i<reader.FieldCount;i++)
                         {
-                            
+                            this.name.Text = reader.GetValue(0).ToString();
+                            this.Fname.Text = reader.GetValue(1).ToString();
+                            this.CNIC.Text = reader.GetValue(2).ToString();
+                            this.D.Text = reader.GetValue(6).ToString();
+                            this.M.Text = reader.GetValue(3).ToString();
+                            this.G.Text = reader.GetValue(7).ToString();
+                            this.E.Text = reader.GetValue(4).ToString();
+                            this.A.Text = reader.GetValue(5).ToString();
+                            this.stpassadmin.Text = reader.GetValue(8).ToString();
+                            this.st_add_bt.Enabled = true;
                         }
                     }
                 }
+                con.Close();
             }
             catch
             {
@@ -1251,16 +1367,59 @@ namespace StudentManagementSystemDesktop
         {
             try
             {
-                query = "delete from " + this.clas.Text + "_" + this.batch.Text + " where id = '" + this.stID + "'";
+                query = "delete from " + this.clas.Text + "_" + this.batch.Text + " where id = '" + this.stID.Text + "'";
                 cmd = new SqlCommand(query, con);
+                con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("Data Removed Successfully");
+                this.fetchadminstudentdata();
             }
             catch
             {
-                MessageBox.Show("Error\nPlease Restart Application");
+                con.Close();
+                MessageBox.Show("Error\nPlease Restart Application\n\n");
             }
+        }
+
+        private void stpassadmin_Enter(object sender, EventArgs e)
+        {
+            if(this.stpassadmin.Text.Equals("Enter Password"))
+            {
+                this.stpassadmin.Text = "";
+                this.stpassadmin.ForeColor = Color.Black;
+            }
+        }
+
+        private void stpassadmin_Leave(object sender, EventArgs e)
+        {
+            if(this.stpassadmin.Text==String.Empty||this.stpassadmin.Text.Equals("Enter Password"))
+            {
+                this.stpassadmin.Text = "Enter Password";
+                this.stpassadmin.ForeColor = Color.Gray;
+            }
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+        private int k = 0;
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            k++;
+            this.adminrainpanel.Location = new Point(707, -150 + k);
+            this.windowadminst.Location = new Point(-4, 210 - k);
+            if(k>145)
+            {
+                k = 0;
+            }
+
         }
     }
 }
