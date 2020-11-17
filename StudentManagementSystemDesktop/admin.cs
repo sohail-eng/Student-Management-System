@@ -26,6 +26,7 @@ namespace StudentManagementSystemDesktop
         SqlCommand cmd;
         ArrayList listclasscontain;
         ArrayList listbatchcontain;
+        ArrayList listadminstudentdata;
         public admin(Form1 fm)
         {
             InitializeComponent();
@@ -38,8 +39,53 @@ namespace StudentManagementSystemDesktop
             con = new SqlConnection(conString);
             listclasscontain = new ArrayList();
             listbatchcontain = new ArrayList();
+            listadminstudentdata = new ArrayList();
             this.fetchclassbatch();
+            this.fetchstudentview();
             
+        }
+        private void fetchstudentview()
+        {
+            try
+            {
+                listadminstudentdata.Clear();
+                if(this.clas.Text==String.Empty||this.batch.Text==String.Empty)
+                {
+                    return;
+                }
+                String tablenamee = this.clas.Text + "_" + this.batch.Text;
+                query = "select id,namee,fname,cnic,mobile,email,addres,DOB,gender,pass from "+tablenamee;
+                cmd = new SqlCommand(query, con);
+                con.Open();
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        for(int i=0;i<reader.FieldCount;i++)
+                        {
+                            listadminstudentdata.Add(reader.GetValue(i));
+                        }
+                    }
+                }
+                con.Close();
+
+
+                // Set Value Into Table'
+                con.Open();
+                query = "select * from " + tablenamee;
+                SqlDataAdapter adp = new SqlDataAdapter(query, con);
+                DataTable dataTable = new DataTable();
+                adp.Fill(dataTable);
+                dataGridViewAdminstudent.DataSource = dataTable;
+                con.Close();
+
+            }
+            catch
+            {
+                DataTable dataa = new DataTable();
+                dataGridViewAdminstudent.DataSource = dataa;
+                con.Close();
+            }
         }
         private void fetchclassbatch()
         {
@@ -735,7 +781,7 @@ namespace StudentManagementSystemDesktop
                 }
                 con.Close();
             }
-            
+            this.fetchadminstudentdata();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -957,19 +1003,24 @@ namespace StudentManagementSystemDesktop
         }
         private void fetchadminstudentdata()
         {
-            if(this.batch.Text==String.Empty||this.clas.Text==String.Empty)
+            if (this.batch.Text == String.Empty || this.clas.Text == String.Empty)
             {
                 return;
             }
             String tablenamee = this.clas.Text + "_" + this.batch.Text;
             try
             {
-                
+                this.fetchstudentview();
             }
             catch
             {
 
             }
+        }
+
+        private void clas_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

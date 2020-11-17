@@ -39,6 +39,7 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabPage_add = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dataGridViewAdminstudent = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.addclassbatchpannel = new System.Windows.Forms.Panel();
             this.emojipannel = new System.Windows.Forms.Panel();
@@ -69,27 +70,16 @@
             this.label10 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.dataGridViewAdminstudent = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namee = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fnamee = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cnice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mobilee = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emaile = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addresss = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dobb = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.genderr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pass = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage_update.SuspendLayout();
             this.tabPage_remove.SuspendLayout();
             this.tabPage_view.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tabPage_add.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAdminstudent)).BeginInit();
             this.addclassbatchpannel.SuspendLayout();
             this.emojipannel.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAdminstudent)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage_update
@@ -98,7 +88,7 @@
             this.tabPage_update.Location = new System.Drawing.Point(4, 25);
             this.tabPage_update.Name = "tabPage_update";
             this.tabPage_update.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_update.Size = new System.Drawing.Size(441, 345);
+            this.tabPage_update.Size = new System.Drawing.Size(1061, 544);
             this.tabPage_update.TabIndex = 1;
             this.tabPage_update.Text = "Update Student";
             this.tabPage_update.UseVisualStyleBackColor = true;
@@ -119,7 +109,7 @@
             this.tabPage_remove.Controls.Add(this.label1);
             this.tabPage_remove.Location = new System.Drawing.Point(4, 25);
             this.tabPage_remove.Name = "tabPage_remove";
-            this.tabPage_remove.Size = new System.Drawing.Size(441, 345);
+            this.tabPage_remove.Size = new System.Drawing.Size(1061, 544);
             this.tabPage_remove.TabIndex = 2;
             this.tabPage_remove.Text = "Remove Student";
             this.tabPage_remove.UseVisualStyleBackColor = true;
@@ -140,7 +130,7 @@
             this.tabPage_view.Controls.Add(this.label12);
             this.tabPage_view.Location = new System.Drawing.Point(4, 25);
             this.tabPage_view.Name = "tabPage_view";
-            this.tabPage_view.Size = new System.Drawing.Size(441, 345);
+            this.tabPage_view.Size = new System.Drawing.Size(1061, 544);
             this.tabPage_view.TabIndex = 3;
             this.tabPage_view.Text = "View Student Data";
             this.tabPage_view.UseVisualStyleBackColor = true;
@@ -167,7 +157,7 @@
             this.tabPage_add.Location = new System.Drawing.Point(4, 25);
             this.tabPage_add.Name = "tabPage_add";
             this.tabPage_add.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_add.Size = new System.Drawing.Size(1056, 510);
+            this.tabPage_add.Size = new System.Drawing.Size(1061, 544);
             this.tabPage_add.TabIndex = 0;
             this.tabPage_add.Text = "Add Student";
             this.tabPage_add.UseVisualStyleBackColor = true;
@@ -201,9 +191,18 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1050, 504);
+            this.panel1.Size = new System.Drawing.Size(1055, 538);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // dataGridViewAdminstudent
+            // 
+            this.dataGridViewAdminstudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAdminstudent.Location = new System.Drawing.Point(0, 353);
+            this.dataGridViewAdminstudent.Name = "dataGridViewAdminstudent";
+            this.dataGridViewAdminstudent.RowTemplate.ReadOnly = true;
+            this.dataGridViewAdminstudent.Size = new System.Drawing.Size(1050, 188);
+            this.dataGridViewAdminstudent.TabIndex = 151;
             // 
             // label3
             // 
@@ -392,6 +391,7 @@
             this.clas.Size = new System.Drawing.Size(97, 21);
             this.clas.TabIndex = 31;
             this.clas.SelectedValueChanged += new System.EventHandler(this.clas_SelectedValueChanged);
+            this.clas.TextChanged += new System.EventHandler(this.clas_TextChanged);
             // 
             // button2
             // 
@@ -563,7 +563,7 @@
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1064, 539);
+            this.tabControl1.Size = new System.Drawing.Size(1069, 573);
             this.tabControl1.TabIndex = 1;
             // 
             // timer1
@@ -571,81 +571,11 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // dataGridViewAdminstudent
-            // 
-            this.dataGridViewAdminstudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAdminstudent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.namee,
-            this.fnamee,
-            this.cnice,
-            this.mobilee,
-            this.emaile,
-            this.addresss,
-            this.dobb,
-            this.genderr,
-            this.pass});
-            this.dataGridViewAdminstudent.Location = new System.Drawing.Point(0, 318);
-            this.dataGridViewAdminstudent.Name = "dataGridViewAdminstudent";
-            this.dataGridViewAdminstudent.RowTemplate.ReadOnly = true;
-            this.dataGridViewAdminstudent.Size = new System.Drawing.Size(1050, 188);
-            this.dataGridViewAdminstudent.TabIndex = 152;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            // 
-            // namee
-            // 
-            this.namee.HeaderText = "Name";
-            this.namee.Name = "namee";
-            // 
-            // fnamee
-            // 
-            this.fnamee.HeaderText = "Father Name";
-            this.fnamee.Name = "fnamee";
-            // 
-            // cnice
-            // 
-            this.cnice.HeaderText = "CNIC";
-            this.cnice.Name = "cnice";
-            // 
-            // mobilee
-            // 
-            this.mobilee.HeaderText = "Mobile";
-            this.mobilee.Name = "mobilee";
-            // 
-            // emaile
-            // 
-            this.emaile.HeaderText = "E-Mail";
-            this.emaile.Name = "emaile";
-            // 
-            // addresss
-            // 
-            this.addresss.HeaderText = "Address";
-            this.addresss.Name = "addresss";
-            // 
-            // dobb
-            // 
-            this.dobb.HeaderText = "DOB";
-            this.dobb.Name = "dobb";
-            // 
-            // genderr
-            // 
-            this.genderr.HeaderText = "Gender";
-            this.genderr.Name = "genderr";
-            // 
-            // pass
-            // 
-            this.pass.HeaderText = "Password";
-            this.pass.Name = "pass";
-            // 
             // admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1064, 539);
+            this.ClientSize = new System.Drawing.Size(1069, 573);
             this.Controls.Add(this.tabControl1);
             this.Name = "admin";
             this.Text = "admin";
@@ -660,11 +590,11 @@
             this.tabPage_add.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAdminstudent)).EndInit();
             this.addclassbatchpannel.ResumeLayout(false);
             this.emojipannel.ResumeLayout(false);
             this.emojipannel.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAdminstudent)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -711,15 +641,5 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel emojipannel;
         private System.Windows.Forms.DataGridView dataGridViewAdminstudent;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn namee;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fnamee;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cnice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mobilee;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emaile;
-        private System.Windows.Forms.DataGridViewTextBoxColumn addresss;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dobb;
-        private System.Windows.Forms.DataGridViewTextBoxColumn genderr;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pass;
     }
 }
