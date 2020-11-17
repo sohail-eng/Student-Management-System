@@ -1022,6 +1022,16 @@ namespace StudentManagementSystemDesktop
         {
             
         }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void stID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 // 100, 9
