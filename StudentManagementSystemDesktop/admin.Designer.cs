@@ -70,9 +70,10 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.up_st_bt = new System.Windows.Forms.Button();
+            this.rm_st_bt = new System.Windows.Forms.Button();
+            this.ad_st_bt = new System.Windows.Forms.Button();
+            this.find = new System.Windows.Forms.Button();
             this.tabPage_update.SuspendLayout();
             this.tabPage_remove.SuspendLayout();
             this.tabPage_view.SuspendLayout();
@@ -169,9 +170,10 @@
             // 
             this.panel1.BackgroundImage = global::StudentManagementSystemDesktop.Properties.Resources.woman_typing_keyboard_laptop_account_login_screen_working_office_table_background_safety_concepts_about_internet_use_2034_1339;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.button10);
-            this.panel1.Controls.Add(this.button9);
-            this.panel1.Controls.Add(this.button8);
+            this.panel1.Controls.Add(this.find);
+            this.panel1.Controls.Add(this.ad_st_bt);
+            this.panel1.Controls.Add(this.rm_st_bt);
+            this.panel1.Controls.Add(this.up_st_bt);
             this.panel1.Controls.Add(this.dataGridViewAdminstudent);
             this.panel1.Controls.Add(this.addclassbatchpannel);
             this.panel1.Controls.Add(this.stID);
@@ -213,11 +215,11 @@
             // addclassbatchpannel
             // 
             this.addclassbatchpannel.BackgroundImage = global::StudentManagementSystemDesktop.Properties.Resources.Screenshot_2020_11_11_225035;
-            this.addclassbatchpannel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.addclassbatchpannel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.addclassbatchpannel.Controls.Add(this.emojipannel);
-            this.addclassbatchpannel.Location = new System.Drawing.Point(30, 333);
+            this.addclassbatchpannel.Location = new System.Drawing.Point(44, 318);
             this.addclassbatchpannel.Name = "addclassbatchpannel";
-            this.addclassbatchpannel.Size = new System.Drawing.Size(435, 346);
+            this.addclassbatchpannel.Size = new System.Drawing.Size(345, 346);
             this.addclassbatchpannel.TabIndex = 150;
             this.addclassbatchpannel.Visible = false;
             this.addclassbatchpannel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
@@ -232,7 +234,7 @@
             this.emojipannel.Controls.Add(this.label2);
             this.emojipannel.Controls.Add(this.button6);
             this.emojipannel.Controls.Add(this.newclassname);
-            this.emojipannel.Location = new System.Drawing.Point(79, 108);
+            this.emojipannel.Location = new System.Drawing.Point(15, 60);
             this.emojipannel.Name = "emojipannel";
             this.emojipannel.Size = new System.Drawing.Size(432, 336);
             this.emojipannel.TabIndex = 6;
@@ -336,7 +338,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Monotype Corsiva", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(373, 0);
+            this.label10.Location = new System.Drawing.Point(205, 15);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(160, 25);
             this.label10.TabIndex = 17;
@@ -346,7 +348,7 @@
             // A
             // 
             this.A.ForeColor = System.Drawing.Color.Gray;
-            this.A.Location = new System.Drawing.Point(413, 271);
+            this.A.Location = new System.Drawing.Point(434, 236);
             this.A.Name = "A";
             this.A.Size = new System.Drawing.Size(250, 20);
             this.A.TabIndex = 106;
@@ -358,7 +360,7 @@
             // E
             // 
             this.E.ForeColor = System.Drawing.Color.Gray;
-            this.E.Location = new System.Drawing.Point(412, 227);
+            this.E.Location = new System.Drawing.Point(435, 202);
             this.E.Name = "E";
             this.E.Size = new System.Drawing.Size(250, 20);
             this.E.TabIndex = 105;
@@ -370,7 +372,7 @@
             // M
             // 
             this.M.ForeColor = System.Drawing.Color.Gray;
-            this.M.Location = new System.Drawing.Point(413, 189);
+            this.M.Location = new System.Drawing.Point(435, 170);
             this.M.MaxLength = 11;
             this.M.Name = "M";
             this.M.Size = new System.Drawing.Size(121, 20);
@@ -384,7 +386,7 @@
             // D
             // 
             this.D.ForeColor = System.Drawing.Color.Gray;
-            this.D.Location = new System.Drawing.Point(563, 145);
+            this.D.Location = new System.Drawing.Point(585, 130);
             this.D.MaxLength = 10;
             this.D.Name = "D";
             this.D.Size = new System.Drawing.Size(99, 20);
@@ -397,7 +399,7 @@
             // CNIC
             // 
             this.CNIC.ForeColor = System.Drawing.Color.Gray;
-            this.CNIC.Location = new System.Drawing.Point(413, 145);
+            this.CNIC.Location = new System.Drawing.Point(435, 130);
             this.CNIC.MaxLength = 13;
             this.CNIC.Name = "CNIC";
             this.CNIC.Size = new System.Drawing.Size(121, 20);
@@ -411,7 +413,7 @@
             // Fname
             // 
             this.Fname.ForeColor = System.Drawing.Color.Gray;
-            this.Fname.Location = new System.Drawing.Point(413, 107);
+            this.Fname.Location = new System.Drawing.Point(434, 104);
             this.Fname.MaxLength = 30;
             this.Fname.Name = "Fname";
             this.Fname.Size = new System.Drawing.Size(250, 20);
@@ -425,7 +427,7 @@
             // name
             // 
             this.name.ForeColor = System.Drawing.Color.Gray;
-            this.name.Location = new System.Drawing.Point(412, 64);
+            this.name.Location = new System.Drawing.Point(434, 76);
             this.name.MaxLength = 30;
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(250, 20);
@@ -444,10 +446,11 @@
             "Male",
             "Female",
             "Other"});
-            this.G.Location = new System.Drawing.Point(563, 188);
+            this.G.Location = new System.Drawing.Point(585, 169);
             this.G.Name = "G";
             this.G.Size = new System.Drawing.Size(99, 21);
             this.G.TabIndex = 25;
+            this.G.Tag = "";
             this.G.Enter += new System.EventHandler(this.G_Enter);
             this.G.Leave += new System.EventHandler(this.G_Leave);
             this.G.Validating += new System.ComponentModel.CancelEventHandler(this.G_Validating);
@@ -459,11 +462,11 @@
             this.st_add_bt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.st_add_bt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.st_add_bt.ForeColor = System.Drawing.Color.Black;
-            this.st_add_bt.Location = new System.Drawing.Point(637, 299);
+            this.st_add_bt.Location = new System.Drawing.Point(509, 262);
             this.st_add_bt.Name = "st_add_bt";
             this.st_add_bt.Size = new System.Drawing.Size(110, 48);
             this.st_add_bt.TabIndex = 26;
-            this.st_add_bt.Text = "Save";
+            this.st_add_bt.Text = "Done";
             this.st_add_bt.UseVisualStyleBackColor = false;
             this.st_add_bt.Click += new System.EventHandler(this.st_add_bt_Click);
             // 
@@ -471,7 +474,7 @@
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(540, 145);
+            this.button1.Location = new System.Drawing.Point(562, 130);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(20, 20);
             this.button1.TabIndex = 29;
@@ -482,7 +485,7 @@
             // 
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(540, 189);
+            this.button2.Location = new System.Drawing.Point(562, 170);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(20, 20);
             this.button2.TabIndex = 30;
@@ -537,7 +540,7 @@
             // stID
             // 
             this.stID.ForeColor = System.Drawing.Color.Gray;
-            this.stID.Location = new System.Drawing.Point(412, 28);
+            this.stID.Location = new System.Drawing.Point(434, 40);
             this.stID.MaxLength = 3;
             this.stID.Name = "stID";
             this.stID.Size = new System.Drawing.Size(121, 20);
@@ -552,7 +555,7 @@
             // 
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(549, 28);
+            this.button3.Location = new System.Drawing.Point(571, 40);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(20, 20);
             this.button3.TabIndex = 111;
@@ -576,53 +579,71 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(574, 172);
+            this.label3.Location = new System.Drawing.Point(596, 153);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 13);
             this.label3.TabIndex = 149;
             this.label3.Text = "Select Gender";
             // 
-            // button8
+            // up_st_bt
             // 
-            this.button8.BackColor = System.Drawing.Color.Transparent;
-            this.button8.BackgroundImage = global::StudentManagementSystemDesktop.Properties.Resources.Screenshot_2020_11_12_112422;
-            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.Black;
-            this.button8.Location = new System.Drawing.Point(210, 173);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(110, 48);
-            this.button8.TabIndex = 152;
-            this.button8.Text = "Save";
-            this.button8.UseVisualStyleBackColor = false;
+            this.up_st_bt.BackColor = System.Drawing.Color.Transparent;
+            this.up_st_bt.BackgroundImage = global::StudentManagementSystemDesktop.Properties.Resources.Screenshot_2020_11_12_112422;
+            this.up_st_bt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.up_st_bt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.up_st_bt.ForeColor = System.Drawing.Color.Black;
+            this.up_st_bt.Location = new System.Drawing.Point(210, 227);
+            this.up_st_bt.Name = "up_st_bt";
+            this.up_st_bt.Size = new System.Drawing.Size(135, 48);
+            this.up_st_bt.TabIndex = 152;
+            this.up_st_bt.Text = "Update";
+            this.up_st_bt.UseVisualStyleBackColor = false;
+            this.up_st_bt.Click += new System.EventHandler(this.up_st_bt_Click);
             // 
-            // button9
+            // rm_st_bt
             // 
-            this.button9.BackColor = System.Drawing.Color.Transparent;
-            this.button9.BackgroundImage = global::StudentManagementSystemDesktop.Properties.Resources.Screenshot_2020_11_12_112422;
-            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.Black;
-            this.button9.Location = new System.Drawing.Point(210, 107);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(110, 48);
-            this.button9.TabIndex = 153;
-            this.button9.Text = "Save";
-            this.button9.UseVisualStyleBackColor = false;
+            this.rm_st_bt.BackColor = System.Drawing.Color.Transparent;
+            this.rm_st_bt.BackgroundImage = global::StudentManagementSystemDesktop.Properties.Resources.Screenshot_2020_11_12_112422;
+            this.rm_st_bt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.rm_st_bt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rm_st_bt.ForeColor = System.Drawing.Color.Black;
+            this.rm_st_bt.Location = new System.Drawing.Point(210, 148);
+            this.rm_st_bt.Name = "rm_st_bt";
+            this.rm_st_bt.Size = new System.Drawing.Size(135, 48);
+            this.rm_st_bt.TabIndex = 153;
+            this.rm_st_bt.Text = "Remove";
+            this.rm_st_bt.UseVisualStyleBackColor = false;
+            this.rm_st_bt.Click += new System.EventHandler(this.rm_st_bt_Click);
             // 
-            // button10
+            // ad_st_bt
             // 
-            this.button10.BackColor = System.Drawing.Color.Transparent;
-            this.button10.BackgroundImage = global::StudentManagementSystemDesktop.Properties.Resources.Screenshot_2020_11_12_112422;
-            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.ForeColor = System.Drawing.Color.Black;
-            this.button10.Location = new System.Drawing.Point(210, 44);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(110, 48);
-            this.button10.TabIndex = 154;
-            this.button10.Text = "Save";
-            this.button10.UseVisualStyleBackColor = false;
+            this.ad_st_bt.BackColor = System.Drawing.Color.Transparent;
+            this.ad_st_bt.BackgroundImage = global::StudentManagementSystemDesktop.Properties.Resources.Screenshot_2020_11_12_112422;
+            this.ad_st_bt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ad_st_bt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ad_st_bt.ForeColor = System.Drawing.Color.Black;
+            this.ad_st_bt.Location = new System.Drawing.Point(210, 64);
+            this.ad_st_bt.Name = "ad_st_bt";
+            this.ad_st_bt.Size = new System.Drawing.Size(135, 48);
+            this.ad_st_bt.TabIndex = 154;
+            this.ad_st_bt.Text = "Add";
+            this.ad_st_bt.UseVisualStyleBackColor = false;
+            this.ad_st_bt.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // find
+            // 
+            this.find.BackColor = System.Drawing.Color.Transparent;
+            this.find.BackgroundImage = global::StudentManagementSystemDesktop.Properties.Resources.Screenshot_2020_11_12_112422;
+            this.find.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.find.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.find.ForeColor = System.Drawing.Color.Black;
+            this.find.Location = new System.Drawing.Point(599, 34);
+            this.find.Name = "find";
+            this.find.Size = new System.Drawing.Size(87, 30);
+            this.find.TabIndex = 155;
+            this.find.Text = "find";
+            this.find.UseVisualStyleBackColor = false;
+            this.find.Click += new System.EventHandler(this.find_Click);
             // 
             // admin
             // 
@@ -694,8 +715,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button st_add_bt;
         private System.Windows.Forms.ComboBox G;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button ad_st_bt;
+        private System.Windows.Forms.Button rm_st_bt;
+        private System.Windows.Forms.Button up_st_bt;
+        private System.Windows.Forms.Button find;
     }
 }

@@ -42,6 +42,7 @@ namespace StudentManagementSystemDesktop
             listadminstudentdata = new ArrayList();
             this.fetchclassbatch();
             this.fetchstudentview();
+            this.hideonstart();
             
         }
         private void fetchstudentview()
@@ -741,45 +742,61 @@ namespace StudentManagementSystemDesktop
             }
             return true;
         }
+        private String fun = "";
         private void st_add_bt_Click(object sender, EventArgs e)
         {
-            String tablename = this.clas.Text + "_" + this.batch.Text;
-            query = "create table "+tablename.ToString() +" (id varchar(3) primary key,namee varchar(50),fname varchar(50),cnic varchar(15),mobile varchar(15),email varchar(50),addres varchar(50),DOB varchar(11),gender varchar(7),pass varchar(10))";
-            cmd = new SqlCommand(query, con);
-            con.Open();
-            try
+            if(fun.Equals("add"))
             {
-                cmd.ExecuteNonQuery();
-            }
-            catch
-            {
-                con.Close();
-            }
-            con.Close();
-            if(erroris==true||this.clas.Text==String.Empty||this.batch.Text==String.Empty)
-            {
-                MessageBox.Show("Please Enter Correct Data");
-            }
-            else if(!(idch(this.stID.Text)))
-            {
-                MessageBox.Show("Please Enter 3 digit ID");
-            }
-            else
-            {
-                query = "insert into "+tablename+" (id,namee,fname,cnic,mobile,email,addres,DOB,gender,pass)values('"+this.stID.Text+"','"+this.name.Text+"','"+this.Fname.Text+"','"+this.CNIC.Text+"','"+this.M.Text+"','"+this.E.Text+"','"+this.A.Text+"','"+this.D.Text+"','"+this.G.Text+"','123456')";
+                String tablename = this.clas.Text + "_" + this.batch.Text;
+                query = "create table " + tablename.ToString() + " (id varchar(3) primary key,namee varchar(50),fname varchar(50),cnic varchar(15),mobile varchar(15),email varchar(50),addres varchar(50),DOB varchar(11),gender varchar(7),pass varchar(10))";
                 cmd = new SqlCommand(query, con);
                 con.Open();
                 try
                 {
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Data Added SuccessFully");
                 }
                 catch
                 {
-                    MessageBox.Show("Data Error\nMaybe Already Exist ID");
                     con.Close();
                 }
                 con.Close();
+                if (erroris == true || this.clas.Text == String.Empty || this.batch.Text == String.Empty)
+                {
+                    MessageBox.Show("Please Enter Correct Data");
+                }
+                else if (!(idch(this.stID.Text)))
+                {
+                    MessageBox.Show("Please Enter 3 digit ID");
+                }
+                else
+                {
+                    query = "insert into " + tablename + " (id,namee,fname,cnic,mobile,email,addres,DOB,gender,pass)values('" + this.stID.Text + "','" + this.name.Text + "','" + this.Fname.Text + "','" + this.CNIC.Text + "','" + this.M.Text + "','" + this.E.Text + "','" + this.A.Text + "','" + this.D.Text + "','" + this.G.Text + "','123456')";
+                    cmd = new SqlCommand(query, con);
+                    con.Open();
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Data Added SuccessFully");
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Data Error\nMaybe Already Exist ID");
+                        con.Close();
+                    }
+                    con.Close();
+                }
+            }
+            else if(fun.Equals("update"))
+            {
+                MessageBox.Show("Update");
+            }
+            else if(fun.Equals("remove"))
+            {
+                MessageBox.Show("Remove");
+            }
+            else
+            {
+                MessageBox.Show("Error \nPlease Restart Application");
             }
             this.fetchadminstudentdata();
         }
@@ -799,15 +816,18 @@ namespace StudentManagementSystemDesktop
             this.emojipannel.Location = new Point(0, 0);
             this.addclassbatchpannel.Location = new Point(0, 0);
             this.addclassbatchpannel.Visible = true;
-            this.button7.Hide();
-            this.label3.Hide();
+            this.addclassbatchpannel.Size = new Size(1050, 346);
+            this.ad_st_bt.Visible = false;
+            this.rm_st_bt.Visible = false;
+            this.up_st_bt.Visible = false;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             this.addclassbatchpannel.Visible = false;
-            this.button7.Show();
-            this.label3.Show();
+            this.ad_st_bt.Visible = true;
+            this.rm_st_bt.Visible = true;
+            this.up_st_bt.Visible = true;
         }
         private Boolean tim = true;
         private int i = 0;
@@ -1031,6 +1051,216 @@ namespace StudentManagementSystemDesktop
         private void stID_TextChanged(object sender, EventArgs e)
         {
 
+        }
+        private void hideonstart()
+        {
+            this.hidefun(this.stID);
+            this.stID.Text = "Enter ID";
+            this.hidefun(this.button3);
+            this.hidefun(this.find);
+            this.hidefun(this.name);
+            this.name.Text = "Enter Your Name";
+            this.hidefun(this.Fname);
+            this.Fname.Text = "Enter Your Father Name";
+            this.hidefun(this.CNIC);
+            this.CNIC.Text = "Enter Your CNIC No";
+            this.hidefun(this.button1);
+            this.hidefun(this.D);
+            this.D.Text = "dd/mm/yyyy";
+            this.hidefun(this.label3);
+            this.hidefun(this.M);
+            this.M.Text = "Enter Your Mobile NO";
+            this.hidefun(this.button2);
+            this.hidefun(this.G);
+            this.hidefun(this.E);
+            this.E.Text = "Enter E-Mail";
+            this.hidefun(this.A);
+            this.A.Text = "Enter Your Address";
+            this.hidefun(this.st_add_bt);
+        }
+        private void hidefun(Button b)
+        {
+            b.Visible = false;b.Enabled = false;
+        }
+        private void enable(Button b)
+        {
+            b.Visible = true; b.Enabled = true;
+        }
+        private void visible(Button b)
+        {
+            b.Visible = true;
+        }
+        private void hidefun(TextBox t)
+        {
+            t.Visible = false;t.Enabled = false;
+        }
+        private void enable(TextBox t)
+        {
+            t.Visible = true;t.Enabled = true;
+        }
+        private void visible(TextBox t)
+        {
+            t.Visible = true;
+        }
+        private void hidefun(Label l)
+        {
+            l.Visible = false;l.Enabled = false;
+        }
+        private void enable(Label l)
+        {
+            l.Visible = true;l.Enabled = true;
+        }
+        private void visible(Label l)
+        {
+            l.Visible = true;
+        }
+        private void hidefun(ComboBox c)
+        {
+            c.Visible = false;c.Enabled = false;
+        }
+        private void enable(ComboBox c)
+        {
+            c.Visible = true;c.Enabled = true;
+        }
+        private void visible(ComboBox c)
+        {
+            c.Visible = true;
+        }
+        private void  showAdd()
+        {
+            this.enable(this.stID);
+            this.enable(this.button3);
+            this.enable(this.name);
+            this.enable(this.Fname);
+            this.enable(this.CNIC);
+            this.enable(this.button1);
+            this.enable(this.D);
+            this.enable(this.label3);
+            this.enable(this.M);
+            this.enable(this.button2);
+            this.enable(this.G);
+            this.enable(this.E);
+            this.enable(this.A);
+            this.enable(this.st_add_bt);
+            this.G.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+        private void button10_Click(object sender, EventArgs e)
+        {
+            this.hideonstart();
+            this.showAdd();
+            this.fun = "add";
+        }
+        private void showupdateRemove()
+        {
+            this.enable(this.stID);
+            this.enable(this.button3);
+            this.enable(this.find);
+            this.visible(this.name);
+            this.visible(this.Fname);
+            this.visible(this.CNIC);
+            this.visible(this.button1);
+            this.visible(this.D);
+            this.visible(this.label3);
+            this.visible(this.M);
+            this.visible(this.button2);
+            this.visible(this.G);
+            this.visible(this.E);
+            this.visible(this.A);
+            this.visible(this.st_add_bt);
+            this.G.DropDownStyle = ComboBoxStyle.DropDown;
+            this.G.Text = "";
+        }
+
+        private void rm_st_bt_Click(object sender, EventArgs e)
+        {
+            this.hideonstart();
+            this.showupdateRemove();
+            this.fun = "remove";
+        }
+
+        private void up_st_bt_Click(object sender, EventArgs e)
+        {
+            this.hideonstart();
+            this.showupdateRemove();
+            this.fun = "update";
+        }
+
+        private void find_Click(object sender, EventArgs e)
+        {
+            ArrayList lists = new ArrayList();
+            lists.Clear();
+            try
+            {
+                query = "select id from " + this.clas.Text + "_" + this.batch.Text;
+                cmd = new SqlCommand(query, con);
+                con.Open();
+                using(SqlDataReader reader=cmd.ExecuteReader())
+                {
+                    while(reader.Read())
+                    {
+                        lists.Add(reader.GetValue(0));
+                    }
+                }
+                con.Close();
+                Boolean b = false;
+                for(int i=0;i<list.Count;i++)
+                {
+                    if(this.stID.Text.Equals(lists[i]))
+                    {
+                        b = true;
+                    }
+                }
+                if(b)
+                {
+                    showData();
+                }
+                else
+                {
+                    MessageBox.Show("Data Not Found");
+                }
+            }
+            catch
+            {
+                con.Close();
+                MessageBox.Show("Data Not Found");
+            }
+        }
+        private void showData()
+        {
+            try
+            {
+                query = "select id,namee,fname,cnic,mobile,email,addres,DOB,gender,pass from "+this.clas.Text+"_"+this.batch.Text;
+                cmd = new SqlCommand(query, con);
+                using(SqlDataReader reader=cmd.ExecuteReader())
+                {
+                    while(reader.Read())
+                    {
+                        for(int i=0;i<reader.FieldCount;i++)
+                        {
+                            
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Error\nPlease Restart Application");
+            }
+        }
+        private void removeData()
+        {
+            try
+            {
+                query = "delete from " + this.clas.Text + "_" + this.batch.Text + " where id = '" + this.stID + "'";
+                cmd = new SqlCommand(query, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Data Removed Successfully");
+            }
+            catch
+            {
+                MessageBox.Show("Error\nPlease Restart Application");
+            }
         }
     }
 }
